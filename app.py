@@ -14,8 +14,10 @@ if 'API_KEY' in st.secrets:
     env['API_KEY'] = st.secrets['API_KEY']
 ###
 
-WEATHER_API_URL = f'http://api.openweathermap.org/data/2.5/weather?q=Poznan&appid={API_KEY}'
-FORECAST_API_URL = f'http://api.openweathermap.org/data/2.5/forecast?q=Poznan&appid={API_KEY}'
+api_key=env["API_KEY"]
+
+WEATHER_API_URL = f'http://api.openweathermap.org/data/2.5/weather?q=Poznan&appid={api_key}'
+FORECAST_API_URL = f'http://api.openweathermap.org/data/2.5/forecast?q=Poznan&appid={api_key}'
 
 # Funkcja do pobierania danych pogodowych
 def fetch_weather_data():
